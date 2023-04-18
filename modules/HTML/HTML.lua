@@ -77,7 +77,7 @@ function HTML:render()
     local file = io.open("./modules/HTML/State.js", "r")
     io.input(file)
     js_file = js_file .. io.read("*all") 
-    file = io.open("./website/" .. "js_comp.js", "w")
+    file = io.open("./website/public/" .. "js_comp.js", "w")
     io.output(file)
     for _, value in pairs(_state_cache) do
         js_file = js_file .. value      
@@ -88,7 +88,7 @@ function HTML:render()
     io.write(js_file)
 
     local CSSFile = GenerateCSS()
-    file = io.open("./website/".. "css_comp.css", "w")
+    file = io.open("./website/public/".. "css_comp.css", "w")
     io.output(file)
     io.write(CSSFile)
     for path, webpage in pairs(_webpages) do
