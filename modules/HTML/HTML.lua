@@ -74,6 +74,9 @@ end
 local _webpages = {}
 function HTML:render()
     local js_file = ""
+    local file = io.open("./styles/global.css", "r")
+    io.input(file)
+    local global_css = io.read("*all") 
     local file = io.open("./modules/HTML/State.js", "r")
     io.input(file)
     js_file = js_file .. io.read("*all") 
@@ -90,7 +93,7 @@ function HTML:render()
     local CSSFile = GenerateCSS()
     file = io.open("./website/public/".. "css_comp.css", "w")
     io.output(file)
-    io.write(CSSFile)
+    io.write(global_css .. "\n" .. CSSFile)
     for path, webpage in pairs(_webpages) do
         file = io.open("./website".. path, "w")
         io.output(file)

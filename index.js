@@ -17,6 +17,7 @@ async function initialize() {
         return;
       }
       console.log(`stdout: ${stdout}`);
+
       res();
     })
   );

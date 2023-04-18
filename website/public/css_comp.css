@@ -1,0 +1,32 @@
+html,
+body {
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+  margin: 0px;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+._0_1{color:black;}
+._1_2{width:45rem;}
+._1_1{width:100vw;}
+._2_1{top:0;}
+._3_1{display:flex;}
+._15_1{margin-top:4rem;}
+._4_1{padding:1rem;}
+._14_1{border:1px solid black;}
+._13_1{border-radius:20px;}
+._5_1{align-items:center;}
+._12_1{height:27rem;}
+._6_1{backdrop-filter:blur(8px);}
+._7_1{position:fixed;}
+._8_1{justify-content:center;}
+._9_2{font-size:4rem;}
+._9_1{font-size:1rem;}
+._10_1{background-color:rgba(255, 255, 255, 0.6);}
+._11_1{gap:1rem;}

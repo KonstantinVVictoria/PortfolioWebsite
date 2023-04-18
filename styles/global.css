@@ -1,0 +1,13 @@
+html,
+body {
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+  margin: 0px;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
