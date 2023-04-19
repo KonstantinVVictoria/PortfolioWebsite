@@ -45,8 +45,10 @@ local config = {
         },
         -- efficent = {
         --     text = "And the cherry on top? LuaSparks automatically condenses and atomizes your CSS and JavaScript files, so you can say goodbye to redundancy and hello to efficiency."
-        -- }
-    
+        -- },
+    },
+    links = {
+        github = "https://github.com/KonstantinVVictoria/LuaSparksTemplate"
     }
 }
 
@@ -117,7 +119,7 @@ local TryItOut =
         }){
             "Try it out!",
             (Icon)({
-                link = "https://github.com/KonstantinVVictoria/LuaSparks", 
+                link = config.links.github, 
                 image = "images/github.png",
                 style = {
                     cursor = "pointer",
