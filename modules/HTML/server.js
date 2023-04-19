@@ -44,7 +44,7 @@ async function initialize() {
       const route = file.replace(".html", "");
       console.log("added route /" + route);
       const file_path = "./" + file;
-      app.get("/faq", (req, res) => {
+      app.get("/" + route, (req, res) => {
         res.sendFile(file_path, { root: "./website" });
       });
     }
