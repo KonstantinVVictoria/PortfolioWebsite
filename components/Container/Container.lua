@@ -7,7 +7,8 @@ return HTML.Component:new(
                     styles.Container,
                     {
                         ["justify-content"] = config.justify or "center"
-                    }
+                    },
+                    config.style or {}
                 }
             }){
                 config.children

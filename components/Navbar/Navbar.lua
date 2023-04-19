@@ -5,7 +5,11 @@ local function Navitem(config)
     local href = config.link
     return 
         (a)({
-            href = href
+            style = styles.NavbarItem,
+            href = href,
+            id = config.label .. "_navitem",
+            onmouseover = JS("hoverBorderNavItem")(config.label .. "_navitem", 1),
+            onmouseleave = JS("hoverBorderNavItem")(config.label .. "_navitem", 0)
         }){
             label
         }(a)
@@ -20,6 +24,7 @@ return HTML.Component:new(
         end
         return 
             (div)({
+                id="navbar_container",
                 style=styles.NavbarContainer
             }){
                 NavItems

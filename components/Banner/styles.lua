@@ -3,11 +3,11 @@ return {
         display = "flex",
         ["align-items"] = "center",
         ["justify-content"] = "center",
-        ["border-radius"] = "20px",
-        border = "1px solid black",
         height = "27rem",
         width = "45rem",
-        color = "black",
-        ["font-size"] = "4rem"
+        color = _theme.trim.primary.color,
+        ["font-size"] = "6rem",
+        ["border-radius"] = _theme.border.primary.radius,
+        ["text-shadow"] = "0px 0px 10px rgba(0, 0, 0, 1)",
     }
 }

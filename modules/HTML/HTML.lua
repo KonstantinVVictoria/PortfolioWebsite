@@ -1,5 +1,5 @@
 package.path = _route_path
-_themes = require("./meta/themes")
+_theme = require("./meta/theme")
 inspect = require('./modules/inspect/inspect')
 HTML = {
     Element = {},
@@ -124,8 +124,8 @@ function HTML:new_webpage()
                     (meta)({ name = "viewport", content = "width=device-width, initial-scale=1.0" })(),
                     (meta)({ ["http-equiv"] = "X-UA-Compatible", content = "ie=edge" })(),
                     (script)({src="js_comp.js", defer=true}){}(script),
-                    (link)({rel="stylesheet", href="styles.css"})(),
-                    (link)({rel= "stylesheet", href="css_comp.css"})(),                     
+                    (script)({src="/reload/reload.js"}){}(script),
+                    (link)({rel= "stylesheet", href="css_comp.css", type="text/css"})(),                     
                     Page.Head,
                 }(head),
                 body()(
