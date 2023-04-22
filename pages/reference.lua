@@ -1,28 +1,12 @@
 local Navbar = require("./components/Navbar/Navbar")
-local Banner = require("./components/Banner/Banner")
 local Container = require("./components/Container/Container")
 local Section = require("./components/Section/Section")
-local Icon = require("./components/Icon/Icon")
+local Wiki = require("./components/Wiki/Wiki")
 local MainPage = HTML:new_webpage()
 
 local config = {
-    website_title = "UI Testing",
-    nav = {
-        items = {
-            {
-                link = "",
-                label = "Home"
-            },
-            {
-                link = "",
-                label = "Contact Us"
-            },
-            {
-                link = "",
-                label = "Reference"
-            }
-        },
-    },
+    website_title = "LuaSparks! Reference",
+    nav = _global.nav
 }
 
 MainPage.Head = {
@@ -34,20 +18,10 @@ MainPage.Head = {
     
 MainPage.Body = {
     (Navbar)({items = config.nav.items})(),
+    (Wiki)()()
 }
 
-MainPage.Footer = {
-    (Container)(){
-        (Section)({
-            direction = "column",
-            style = {
-                ["align-items"] = "center",
-            }
-        }){
-            "Konstantin Victoria 4/19/2023"
-        }(Section),
-    }(Container),
-}
+MainPage.Footer = {}
 
 
 return MainPage

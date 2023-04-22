@@ -6,23 +6,8 @@ local Icon = require("./components/Icon/Icon")
 local MainPage = HTML:new_webpage()
 
 local config = {
-    website_title = "UI Testing",
-    nav = {
-        items = {
-            {
-                link = "",
-                label = "Home"
-            },
-            {
-                link = "",
-                label = "Contact Us"
-            },
-            {
-                link = "",
-                label = "Reference"
-            }
-        },
-    },
+    website_title = "LuaSparks!",
+    nav = _global.nav,
     sections = {
         {
             title = "What is LuaSparks?",
@@ -146,7 +131,7 @@ MainPage.Footer = {
                 ["align-items"] = "center",
             }
         }){
-            "Konstantin Victoria 4/19/2023"
+            _global.footer.copyright
         }(Section),
     }(Container),
 }

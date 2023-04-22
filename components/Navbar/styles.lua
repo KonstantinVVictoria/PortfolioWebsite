@@ -13,7 +13,8 @@ return {
         width = "100vw",
         top = "0px",
         ["border-top"] = "2px solid rgba(249, 194, 60)",
-        ["z-index"] = "100"
+        ["z-index"] = "101",
+        ["box-shadow"] = "0px 0px 30px rgba(0, 0, 0, 0.3)"
         
     },
     NavbarItem = {

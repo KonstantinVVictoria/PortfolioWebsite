@@ -1,5 +1,6 @@
 package.path = _route_path
-_theme = require("./meta/theme")
+_global = require("./meta/global")
+_theme = _global.theme or {}
 inspect = require('./modules/inspect/inspect')
 HTML = {
     Element = {},

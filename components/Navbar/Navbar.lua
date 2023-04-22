@@ -1,5 +1,5 @@
 local styles = require("./components/Navbar/styles")
-
+local Contacts = require("./components/Contacts/Contacts")
 local function Navitem(config)
     local label = config.label
     local href = config.link
@@ -27,7 +27,8 @@ return HTML.Component:new(
                 id="navbar_container",
                 style=styles.NavbarContainer
             }){
-                NavItems
+                NavItems,
+                (Contacts)()()
             }(div)
     end
 )

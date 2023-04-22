@@ -9,5 +9,6 @@ return {
         ["font-size"] = "6rem",
         ["border-radius"] = _theme.border.primary.radius,
         ["text-shadow"] = "0px 0px 10px rgba(0, 0, 0, 1)",
+        ["background-repeat"] = "no-repeat"
     }
 }
