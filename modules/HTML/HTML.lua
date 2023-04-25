@@ -6,6 +6,8 @@ HTML = {
     Element = {},
     Component = {}
 }
+local _fonts = {}
+GFont = require("./modules/HTML/GoogleFonts/GFont")(_fonts)
 
 local HTML_Element_Cache ={}
 local _js_cache = {}
@@ -110,14 +112,16 @@ function HTML:new_webpage()
         Head = {},
         Footer = {}
     }
-    Page.write_to = function(path)
-        local file = io.open(path.. "index.html", "w")
-        io.output(file)
+    Page.route = function(path)
         local html = HTML.Element:new("html")
         local body = HTML.Element:new("body")
         local head = HTML.Element:new("head")
         local footer = HTML.Element:new("footer")
         local meta = HTML.Element:new("meta")
+        local GFont_Header = _fonts.length > 0 and {
+            (link)({rel="preconnect", href="https://fonts.googleapis.com"})(),
+            (link)({rel="preconnect", href="https://fonts.gstatic.com", crossorigin = true})(),
+            } or {}
         local template =
             html({lang="en"}){
                 head() {
@@ -126,7 +130,8 @@ function HTML:new_webpage()
                     (meta)({ ["http-equiv"] = "X-UA-Compatible", content = "ie=edge" })(),
                     (script)({src="js_comp.js", defer=true}){}(script),
                     (script)({src="/reload/reload.js"}){}(script),
-                    (link)({rel= "stylesheet", href="css_comp.css", type="text/css"})(),                     
+                    (link)({ rel = "stylesheet", href = "css_comp.css", type = "text/css" })(),
+                    GFont_Header,
                     Page.Head,
                 }(head),
                 body()(
@@ -136,7 +141,7 @@ function HTML:new_webpage()
                     Page.Footer
                 }(footer)
             }(html)
-        _webpages[path] = template
+        _webpages[path =="/" and "/index.html" or path..".html"] = template
 
     end
     return Page

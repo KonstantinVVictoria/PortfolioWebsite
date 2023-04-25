@@ -1,10 +1,9 @@
-_route_path = './?.lua;' .. package.path
-package.path = _route_path
-HTML = require("./modules/HTML/HTML")
+_route_path = './?.lua;' .. package.path -- DO NOT TOUCH
+package.path = _route_path -- DO NOT TOUCH
+HTML = require("./modules/HTML/HTML") -- DO NOT TOUCH
+--import webpages:
+local MainPage = require("./pages/index")
+--Define webpage routes here:
+MainPage.route("/")
 
-local index = require("./pages/index")
-local reference_page = require("./pages/reference")
-
-index.write_to("/index.html")
-reference_page.write_to("/reference.html")
-HTML:render()
+HTML:render() -- DO NOT TOUCH
