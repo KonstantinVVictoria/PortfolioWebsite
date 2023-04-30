@@ -1,4 +1,8 @@
-package.path = _route_path
+package.path = package.path .. "./?.lua;"
+rgb = require("./modules/HTML/rgb")
+rgba = require("./modules/HTML/rgba")
+hex = require("./modules/HTML/hex")
+CSS = require("./modules/HTML/css")
 _global = require("./meta/global")
 _theme = _global.theme or {}
 inspect = require('./modules/inspect/inspect')
@@ -7,7 +11,7 @@ HTML = {
     Component = {}
 }
 local _fonts = {}
-GFont = require("./modules/HTML/GoogleFonts/GFont")(_fonts)
+GFont = require("./modules/HTML/GFont")(_fonts)
 
 local HTML_Element_Cache ={}
 local _js_cache = {}
@@ -42,7 +46,7 @@ local function CSS_cacher(css_obj)
     return css_obj
 end
 
-local function CSS(css_obj)
+local function CSS_obj(css_obj)
     local accumumaltor = ""
     local style_object = {}
     local _css_cache_class = ""
@@ -96,7 +100,7 @@ function HTML:render()
     local CSSFile = GenerateCSS()
     file = io.open("./website/public/".. "css_comp.css", "w")
     io.output(file)
-    io.write(global_css .. "\n" .. CSSFile)
+    io.write(CSS.root .. global_css .. "\n" .. CSSFile)
     for path, webpage in pairs(_webpages) do
         file = io.open("./website".. path, "w")
         io.output(file)
@@ -217,7 +221,7 @@ function HTML:stringify(elements)
             local attributes = ""        
             if element.config then
                 if element.config.style then
-                    local CSS_info = CSS(element.config.style) 
+                    local CSS_info = CSS_obj(element.config.style) 
                     if  element.config.class  == nil then element.config.class = "" end
                     element.config.class = element.config.class .. " " .. CSS_info.css_class 
                 end   
@@ -296,13 +300,9 @@ function table_concat(t1, t2)
     return t1
 end
 
-function css_combine(...)
-    local css_composite = {}
-    for _, css_ruleset in ipairs({...}) do
-        table_concat(css_composite, css_ruleset)
-    end
-    return css_composite
-end
+
+
+
 
 a = HTML.Element:new("a")
 abbr = HTML.Element:new("abbr")

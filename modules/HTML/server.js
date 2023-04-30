@@ -6,7 +6,11 @@ const { exec } = require("child_process");
 const reload = require("reload");
 const server = http.createServer(app);
 const fs = require("fs");
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
+// parse application/json
+app.use(express.json());
 let api_methods = [
   "post",
   "get",

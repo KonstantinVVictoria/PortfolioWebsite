@@ -1,0 +1,28 @@
+* {
+  font-family: "Mulish", sans-serif;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+
+._6_2{font-size:1.2rem;}
+._6_1{font-size:4rem;}
+._9_1{overflow:hidden;}
+._1_1{display:flex;}
+._13_1{cursor:pointer;}
+._4_1{flex-direction:column;}
+._5_1{align-items:center;}
+._8_1{border-radius:50px;}
+._11_2{padding:0.4rem 0.7rem;}
+._11_1{padding:0rem 0.7rem;}
+._7_2{border:none;}
+._7_1{border:1px solid black;}
+._10_1{outline:none;}
+._2_2{width:30rem;}
+._2_1{width:100vw;}
+._3_1{justify-content:center;}
+._12_1{margin:0px;}
+._0_1{height:100vh;}
+._0_2{height:100%;}
